@@ -1,0 +1,98 @@
+html, body {
+	position: relative;
+	top: -9px;
+}
+
+.header {
+	width: 80%;
+	background-color: green;
+	margin: 0 auto;
+	height: 150px;
+}
+.header .logo {
+	position: absolute;
+	padding: 5px;
+}
+.header .menubar {
+	list-style: none;
+	position: relative;
+	width: 100%;
+	top: 46px;
+}
+.header .menubar li {
+	list-style: none;
+	float: right;
+}
+.login-button{
+	display: inline;
+	margin: 7px;
+	padding: 10px 0 10px 0;
+	height: 20px;
+	border-radius: 5px;
+	background-color: orange;
+	border: 1px solid black;
+}
+.login-button a, .login-button input{
+	text-decoration: none;
+	padding: 10px;
+	color: black;
+	border-radius: 5px;
+}
+.login-button input[type="submit"]{
+	position: relative;
+	top: -10px;
+	padding-bottom: 14px;
+	background-color: orange;
+	border: none;
+	cursor: pointer;
+}
+.login {
+	display: inline;
+	padding: 10px;
+	margin: 7px;
+	height: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+.container {
+	box-sizing: border-box;
+	width: 80%;
+	background-color: red;
+	margin: 0 auto;
+	height: 1000px;
+	padding: 10px;
+}
+.footer {
+	margin: 0 auto;	
+	width: 80%;
+	background-color: blue;
+	color: #FFFF00;
+	height: 100px;
+	float: center;
+	text-align: center;
+	text-decoration: underline;
+	vertical-align: middle;
+}
+.container .post {
+	background-color: lightgrey;
+	border-radius: 5px;
+    width: 350px;
+	height:250px;
+	margin: 25px;
+    border: 3px solid black;
+	overflow-y:scroll;
+    position: relative;
+	cursor: pointer;
+	font-size: 10px;	
+    font-weight: 500;
+    letter-spacing: .5px;
+	float: left
+   
+}
+.clear {
+	clear: both;
+}
+.footer .element {
+	position: relative;
+	top: 25%;
+}
