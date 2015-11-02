@@ -14,10 +14,10 @@
 	<div class="header">
 		<img src="logo.png" class="logo" alt="Logo" width="140" height="140"/>
 		<div class="menubar">
-			<form name="" action="login.pl" method="post">
+			<form name="login" id="login" action="login.pl" method="post">
 			<ul>
 				<li class="login-button"><a href="">Sign Up</a></li>
-				<li class="login-button"><input type="submit" value="Log In" /></li>
+				<li class="login-button"><a href="#" onclick="document.getElementById('login').submit()">Login</a></li>
 				<li><input class="login" type="password" placeholder="Password"/></li>
 				<li><input class="login" type="text" placeholder="Username"/></li>
 			</ul>
@@ -27,7 +27,7 @@
 	<div class="container">
 		<form action="search.pl" method="post" class="form">
 		  Search:
-		  <input type="search" name="googlesearch" value="Search away...">
+		  <input type="search" name="googlesearch" placeholder="Search away...">
 		  <input type="submit">
 		</form>
 		<div class="post">  
