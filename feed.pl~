@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+use strict;
+use CGI qw( :standard );
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+
+my $user = cookie("user");
+
+print header();
+print start_html();
+
+open(my $myfile,  "/status/$user.txt");
+while(my $line = <$myfile>) {
+    chomp $line;
+    print("<div class = \"post\"><p>$user posted a status</p><p>$line</p></div>");
+}
+
+print end_html();
