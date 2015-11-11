@@ -12,15 +12,14 @@
 
 <body>
 	<div class="header">
-		<img src="logo.png" class="logo" alt="Logo"
-		width="140" height="140" alt="Logo"/>
+		<img src="logo.png" class="logo" alt="Logo" width="140" height="140"/>
 		<div class="menubar">
 			<form name="login" id="login" action="login.pl" method="post">
 			<ul>
 				<li class="login-button"><a href="">Sign Up</a></li>
 				<li class="login-button"><a href="#" onclick="document.getElementById('login').submit()">Login</a></li>
-				<li><input class="login" type="password" placeholder="Password"/></li>
-				<li><input class="login" type="text" placeholder="Username"/></li>
+				<li><input class="login" name="password" type="password" placeholder="Password"/></li>
+				<li><input class="login" name="username" type="text" placeholder="Username"/></li>
 			</ul>
 			</form>
 		</div>
