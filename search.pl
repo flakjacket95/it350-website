@@ -47,7 +47,7 @@ opendir(DIR,$DIR) or die "Cannot open $DIR\n";
 			my @words = split /\s/, $line;
 			foreach my $word (@words) {
 				if($word eq $searchkey) {
-					print("<div class = \"post\"><p>$user posted a status</p><p>$line</p></div>");
+					print("<div class = \"post\"><p>Search key found</p><p>$line</p></div>");
 				}
 			}
 		}
