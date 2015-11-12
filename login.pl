@@ -34,7 +34,7 @@ while(my $line = <$myfile>) {
 my $username = $session->param('username');
 if($username) {
 ##Looked this up so our script is just a background script
-    print CGI::redirect(-uri => "index.html",
+    print CGI::redirect(-uri => "main.pl",
 			-cookie =>$session->cookie(),
 			-status => 302);
 }
