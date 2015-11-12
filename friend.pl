@@ -3,17 +3,29 @@
 use strict;
 use CGI qw( :standard );
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser); 
-my $expires = gmtime(time() + 86400);
+use CGI::Session;
+
+# Start the session.                                                                                                                                                                                         
+# This reads the cookies and resumes a previous session if present.                                                                                                                                          
+my $session = new CGI::Session("driver:File", undef, {Directory=>'/tmp'});
+my $sid = $session->id();
+###For testing only###                                                                                                                                                                                       
+#print "Set-Cookie: user=testing; expires=$expires; \n";
+###For testing only###
+my $username = $session->param('username');
+if(!($username)) {
+    print "Location: index.html\n\n"
+}
 
 print header();
 print start_html("Add Friend");
 
-my $user = cookie("user");
 my $time = localtime();
 my $friend = param("friend");
 
-my $fname = "friend/".$friend.".txt";
+my $fname = "friend/$username.txt";
 open(my $file, ">>", $fname);
+print("$username  $friend\n");
 
 my $exists = 0;
 while(my $check = <$file>) {
