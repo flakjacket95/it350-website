@@ -35,6 +35,6 @@ while(my $nm = <$frndfile>) {
 	my @words = split /\t/, $line;
     }
     
-    print ("</div>");
 }
+print ("</div>");
 print end_html();
