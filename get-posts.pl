@@ -24,6 +24,7 @@ open(my $frndfile,  $frnd);
 while(my $nm = <$frndfile>) {
     chomp $nm;
     my $fname = "status/".$nm.".txt";
+    print $fname;
     open(my $myfile,  $fname);
     while(my $line = <$myfile>) {
 	chomp $line;
