@@ -36,7 +36,7 @@ print ("<div class=\"container\">");
     #print Dumper \@words;
 	
 my $myfile;
-my $DIR = "/status";
+my $DIR = "status/";
 opendir(DIR,$DIR) or die "Cannot open $DIR\n";
     my @files = readdir(DIR);
     closedir(DIR);
