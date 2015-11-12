@@ -10,9 +10,12 @@ my $expires = gmtime(time() + 86400);
 ###For testing only### x
 
 my $user = cookie("user");
+my $searchkey =param("googlesearch");
 
 print header();
 print start_html("Status's");
+
+#print ("<p>Here is the key word $searchkey</p>");
 
 my $fname = "status/".$user.".txt";
 
