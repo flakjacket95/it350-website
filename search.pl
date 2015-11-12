@@ -35,13 +35,14 @@ print ("<div class=\"container\">");
     ###This prints out the array - for easy reading
     #print Dumper \@words;
 	
+my $myfile;
 my $DIR = "/status";
 opendir(DIR,$DIR) or die "Cannot open $DIR\n";
     my @files = readdir(DIR);
     closedir(DIR);
     foreach my $file (@files) {
         next if ($file !~ /\.txt$/i);\
-		open(my $myfile, "", $file);
+		open($myfile, "", $file);
         while(my $line = <$myfile>) {
 			chomp($line);		
 			my @words = split /\s/, $line;
