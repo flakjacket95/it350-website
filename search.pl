@@ -45,13 +45,11 @@ opendir(DIR,$DIR) or die "Cannot open $DIR\n";
 		open($myfile, $file);
         while(my $line = <$myfile>) {
 			chomp($line);		
-			my @words = split /\s/, $line;
-			foreach my $word (@words) {
-				if($word eq $searchkey) {
-					print("<div class = \"post\"><p>Search key found</p><p>$line</p></div>");
-				}
+			my @words = split /\t/, $line;
+			if($line =~ m/$\w*$searchkey\w*^/) {
+			    print("<div class = \"post\"><p>Search key found</p><p>$line</p></div>");
 			}
-		}
+	}
     }
 	
 	
