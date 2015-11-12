@@ -22,7 +22,7 @@ print "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">";
 print '
 <body>
 	<div class="header">
-		<a href="index.html" ><img src="logo.png" class="logo" alt="Logo" width="140" height="140"/></a>
+		<a href="main.pl" ><img src="logo.png" class="logo" alt="Logo" width="140" height="140"/></a>
 	';
 if(!($session->param('admin')))
 {
@@ -32,6 +32,15 @@ if(!($session->param('admin')))
 	chomp $line;
 	print $line;
     }
+}
+else {
+    my $fname = "log_menu.html";
+    open(my $myfile, $fname);
+    while (my $line = <$myfile>) {
+        chomp $line;
+        print $line;
+    }
+
 }
 print '
 </div> 
