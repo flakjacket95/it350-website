@@ -33,8 +33,10 @@ my @files = readdir(DIR);
 print @files;
 closedir(DIR);
 foreach my $file (@files) {
-    next if ($file !~ /\.txt$/i);\
+    next if ($file !~ /\.txt$/i); {
+	$file = "status/".$file;
 	open($myfile, $file);
+    }
     while(my $line = <$myfile>) {
 	chomp($line);		
 	my @words = split /\t/, $line;
