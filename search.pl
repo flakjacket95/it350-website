@@ -1,19 +1,25 @@
 #!/usr/bin/perl
 use strict;
 use CGI qw( :standard );
-use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
-###Testing
-use Data::Dumper qw(Dumper);
-my $expires = gmtime(time() + 86400);
-###For testing only###                                                                                                                                                        
-#print "Set-Cookie: user=test; expires=$expires; \n";
-###For testing only### x
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser); 
+use CGI::Session;
 
-my $user = cookie("user");
-my $searchkey =param("googlesearch");
+# Start the session.
+# This reads the cookies and resumes a previous session if present.
+my $session = new CGI::Session("driver:File", undef, {Directory=>'/tmp'});
+my $sid = $session->id();
+
+# Get the username from the current session
+# This was set with the login.pl script.
+my $username = $session->param('username');
+###Checks for no-login and returns to the homepage if so
+if(!($username)) {
+    print "Location: index.html\n\n"
+}
+my $searchkey=param("googlesearch");
 
 print header();
-print start_html("Status's");
+print start_html("Search");
 
 #print ("<p>Here is the key word $searchkey</p>");
 

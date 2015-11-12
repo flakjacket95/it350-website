@@ -28,6 +28,7 @@ while(my $line = <$myfile>) {
 	    #Set our cookie
 	    $session->param('username', $user);
 	    $loggedIn = 1;
+		$session->param("admin", @data[3]);
 	}
     }
 }
