@@ -23,8 +23,6 @@ print start_html("Search");
 
 #print ("<p>Here is the key word $searchkey</p>");
 
-my $fname = "status/".$user.".txt";
-
 print ("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">"); 
 print ("<div class=\"container\">");
 
@@ -43,7 +41,7 @@ opendir(DIR,$DIR) or die "Cannot open $DIR\n";
     closedir(DIR);
     foreach my $file (@files) {
         next if ($file !~ /\.txt$/i);\
-		open($myfile, "", $file);
+		open(my $myfile, "", $file);
         while(my $line = <$myfile>) {
 			chomp($line);		
 			my @words = split /\s/, $line;
