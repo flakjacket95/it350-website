@@ -29,20 +29,20 @@ print ("<div class=\"container\">");
 my $myfile;
 my $DIR = "status/";
 opendir(DIR,$DIR) or die "Cannot open $DIR\n";
-    my @files = readdir(DIR);
-    closedir(DIR);
-    foreach my $file (@files) {
-        next if ($file !~ /\.txt$/i);\
-		open($myfile, $file);
-        while(my $line = <$myfile>) {
-			chomp($line);		
-			my @words = split /\t/, $line;
-			print $line;
-			if($line =~ /$searchkey/) {
-			    print("<div class = \"post\"><p>Search key found</p><p>$line</p></div>");
-			}
+my @files = readdir(DIR);
+print @files;
+closedir(DIR);
+foreach my $file (@files) {
+    next if ($file !~ /\.txt$/i);\
+	open($myfile, $file);
+    while(my $line = <$myfile>) {
+	chomp($line);		
+	my @words = split /\t/, $line;
+	if($line =~ /$searchkey/) {
+	    print("<div class = \"post\"><p>Search key found</p><p>$line</p></div>");
 	}
     }
+}
 	
 	
 
