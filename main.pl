@@ -23,17 +23,18 @@ print '
 <body>
 	<div class="header">
 		<a href="index.html" ><img src="logo.png" class="logo" alt="Logo" width="140" height="140"/></a>
-		<div class="menubar">
-			<form name="login" id="login" action="login.pl" method="post">
-			<ul>
-				<li class="login-button"><a href="">Sign Up</a></li>
-				<li class="login-button"><a href="#" onclick="document.getElementById(\'login\').submit()">Login</a></li>
-				<li><input class="login" name="password" type="password" placeholder="Password"/></li>
-				<li><input class="login" name="username" type="text" placeholder="Username"/></li>
-			</ul>
-			</form>
-		</div>
-	</div> 
+	';
+if(!($session->param('admin')))
+{
+    my $fname = "log_menu.html";
+    open(my $myfile, $fname);
+    while (my $line = <$myfile>) {
+	chomp $line;
+	print $line;
+    }
+}
+print '
+</div> 
 	<div class="container">
 		<form action="search.pl" method="post" class="form">
 		  Search:
