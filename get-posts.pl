@@ -23,10 +23,7 @@ my $frnd = "friend/".$username.".txt";
 open(my $myfile,  $frnd);
 while(my $line = <$myfile>) {
     chomp $line;
-    print("<div class = \"post\"><p>$username posted a status</p><p>$line</p></div>");
-    ###Splits the array on tabs.                                                                                                                     
-
-    my $fname = "status/".$username.".txt";
+    my $fname = "status/".$line.".txt";
     
     print ("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">"); 
     print ("<div class=\"container\">");
