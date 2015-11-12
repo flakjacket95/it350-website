@@ -42,7 +42,7 @@ opendir(DIR,$DIR) or die "Cannot open $DIR\n";
     closedir(DIR);
     foreach my $file (@files) {
         next if ($file !~ /\.txt$/i);\
-		open($myfile, "", $file);
+		open($myfile, $file);
         while(my $line = <$myfile>) {
 			chomp($line);		
 			my @words = split /\s/, $line;
