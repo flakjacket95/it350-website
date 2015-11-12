@@ -21,6 +21,7 @@ print header();
 print start_html("Status's");
 print ("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">"); 
 print ("<div class=\"container\">");
+
 my $frnd = "friend/".$username.".txt";
 open(my $frndfile,  $frnd);
 while(my $nm = <$frndfile>) {
