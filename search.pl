@@ -28,15 +28,34 @@ my $fname = "status/".$user.".txt";
 print ("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">"); 
 print ("<div class=\"container\">");
 
-open(my $myfile,  $fname);
-while(my $line = <$myfile>) {
-    chomp $line;
-    print("<div class = \"post\"><p>$user posted a status</p><p>$line</p></div>");
+#open(my $myfile,  $fname);
+#while(my $line = <$myfile>) 
+#    chomp $line;
+ #   print("<div class = \"post\"><p>$user posted a status</p><p>$line</p></div>");
     ###Splits the array on tabs. 
-    my @words = split /\t/, $line;
+  #  my @words = split /\t/, $line;
     ###This prints out the array - for easy reading
     #print Dumper \@words;
-}
+	
+my $DIR = "/status";
+opendir(DIR,$DIR) or die "Cannot open $DIR\n";
+    my @files = readdir(DIR);
+    closedir(DIR);
+    foreach my $file (@files) {
+        next if ($file !~ /\.txt$/i);\
+		open($myfile, "", $file);
+        while(my $line = <$myfile>) {
+			chomp($line);		
+			my @words = split /\s/, $line;
+			foreach my $word (@words) {
+				if($word eq $searchkey) {
+					print("<div class = \"post\"><p>$user posted a status</p><p>$line</p></div>");
+				}
+			}
+		}
+    }
+	
+	
 
 print ("</div>");
 
