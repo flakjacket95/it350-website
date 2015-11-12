@@ -3,18 +3,24 @@ use strict;
 use CGI qw( :standard );
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 ###Testing
-use Data::Dumper qw(Dumper);
-my $expires = gmtime(time() + 86400);
-###For testing only###                                                                                                                                                        
-#print "Set-Cookie: user=test; expires=$expires; \n";
-###For testing only### x
+use CGI::Session;
 
-my $user = cookie("user");
+# Start the session.                                                                                                                                                                                         
+# This reads the cookies and resumes a previous session if present.                                                                                                                                          
+my $session = new CGI::Session("driver:File", undef, {Directory=>'/tmp'});
+my $sid = $session->id();
 
+# Get the username from the current session                                                                                                                                                                  
+# This was set with the login.pl script.                                                                                                                                                                     
+my $username = $session->param('username');
+###Checks for no-login and returns to the homepage if so                                                                                                                                                     
+if(!($username)) {
+    print "Location: index.html\n\n"
+}
 print header();
 print start_html("Status's");
 
-my $fname = "status/".$user.".txt";
+my $fname = "status/".$username.".txt";
 
 print ("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">"); 
 print ("<div class=\"container\">");
@@ -22,7 +28,7 @@ print ("<div class=\"container\">");
 open(my $myfile,  $fname);
 while(my $line = <$myfile>) {
     chomp $line;
-    print("<div class = \"post\"><p>$user posted a status</p><p>$line</p></div>");
+    print("<div class = \"post\"><p>$username posted a status</p><p>$line</p></div>");
     ###Splits the array on tabs. 
     my @words = split /\t/, $line;
     ###This prints out the array - for easy reading
