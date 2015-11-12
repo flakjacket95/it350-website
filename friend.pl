@@ -25,7 +25,7 @@ my $friend = param("friend");
 
 my $fname = "friend/$username.txt";
 open(my $file, ">>", $fname);
-print("$username  $friend\n");
+#print("$username  $friend\n");
 
 my $exists = 0;
 while(my $check = <$file>) {
