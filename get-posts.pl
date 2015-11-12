@@ -19,16 +19,17 @@ if(!($username)) {
 }
 print header();
 print start_html("Status's");
+print ("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">"); 
+print ("<div class=\"container\">");
 my $frnd = "friend/".$username.".txt";
 open(my $frndfile,  $frnd);
 while(my $nm = <$frndfile>) {
     chomp $nm;
     my $fname = "status/".$nm.".txt";
-    print $fname;
     open(my $myfile,  $fname);
     while(my $line = <$myfile>) {
 	chomp $line;
-	print("<div class = \"post\"><p>$username posted a status</p><p>$line</p></div>");
+	print("<div class = \"post\"><p>$nm posted a status</p><p>$line</p></div>");
 	###Splits the array on tabs. 
 	my @words = split /\t/, $line;
     }
