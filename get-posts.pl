@@ -20,14 +20,10 @@ if(!($username)) {
 print header();
 print start_html("Status's");
 my $frnd = "friend/".$username.".txt";
-open(my $myfile,  $frnd);
-while(my $line = <$myfile>) {
-    chomp $line;
-    my $fname = "status/".$line.".txt";
-    
-    print ("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">"); 
-    print ("<div class=\"container\">");
-    
+open(my $frndfile,  $frnd);
+while(my $nm = <$frndfile>) {
+    chomp $nm;
+    my $fname = "status/".$nm.".txt";
     open(my $myfile,  $fname);
     while(my $line = <$myfile>) {
 	chomp $line;
