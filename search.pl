@@ -25,15 +25,6 @@ print start_html("Search");
 
 print ("<link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">"); 
 print ("<div class=\"container\">");
-
-#open(my $myfile,  $fname);
-#while(my $line = <$myfile>) 
-#    chomp $line;
- #   print("<div class = \"post\"><p>$user posted a status</p><p>$line</p></div>");
-    ###Splits the array on tabs. 
-  #  my @words = split /\t/, $line;
-    ###This prints out the array - for easy reading
-    #print Dumper \@words;
 	
 my $myfile;
 my $DIR = "status/";
@@ -46,6 +37,7 @@ opendir(DIR,$DIR) or die "Cannot open $DIR\n";
         while(my $line = <$myfile>) {
 			chomp($line);		
 			my @words = split /\t/, $line;
+			print $line;
 			if($line =~ /$searchkey/) {
 			    print("<div class = \"post\"><p>Search key found</p><p>$line</p></div>");
 			}
