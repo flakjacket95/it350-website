@@ -36,12 +36,12 @@ foreach my $file (@files) {
     next if ($file !~ /\.txt$/i); {
 	$file = "status/".$file;
 	open($myfile, $file);
-    }
-    while(my $line = <$myfile>) {
-	chomp($line);		
-	my @words = split /\t/, $line;
-	if($line =~ /$searchkey/) {
-	    print("<div class = \"post\"><p>Search key found</p><p>$line</p></div>");
+	while(my $line = <$myfile>) {
+	    chomp($line);		
+	    my @words = split /\t/, $line;
+	    if($line =~ /$searchkey/) {
+		print("<div class = \"post\"><p>Search key found</p><p>$line</p></div>");
+	    }
 	}
     }
 }
