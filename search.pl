@@ -30,7 +30,6 @@ my $myfile;
 my $DIR = "status/";
 opendir(DIR,$DIR) or die "Cannot open $DIR\n";
 my @files = readdir(DIR);
-print @files;
 closedir(DIR);
 foreach my $file (@files) {
     next if ($file !~ /\.txt$/i); {
@@ -39,7 +38,7 @@ foreach my $file (@files) {
 	while(my $line = <$myfile>) {
 	    chomp($line);		
 	    my @words = split /\t/, $line;
-	    if($line =~ /$searchkey/) {
+	    if($words[1] =~ /$searchkey/) {
 		print("<div class = \"post\"><p>Search key found</p><p>$line</p></div>");
 	    }
 	}
