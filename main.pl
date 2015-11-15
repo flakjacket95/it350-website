@@ -4,15 +4,15 @@ use CGI qw( :standard );
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use CGI::Session;
 require 'feed.pl';
-# Start the session.                                                                                                                                  
-# This reads the cookies and resumes a previous session if present.                                                                                   
+# Start the session.                                                                                                                  
+# This reads the cookies and resumes a previous session if present.                                                                         
 my $session = new CGI::Session("driver:File", undef, {Directory=>'/tmp'});
 my $sid = $session->id();
 
-# Get the username from the current session                                                                                                           
-# This was set with the login.pl script.                                                                                                              
+# Get the username from the current session                                                                                             
+# This was set with the login.pl script.                                                                                                    
 my $username = $session->param('username');
-###Checks for no-login and returns to the homepage if so                                                                                              
+###Checks for no-login and returns to the homepage if so                                                                                 
 if(!($username)) {
     print "Location: index.html\n\n"
 }
@@ -50,8 +50,9 @@ print '
 		  <input type="search" name="googlesearch" placeholder="Search away...">
 		  <input type="submit">
 		</form>
-
-		 <p class="clear"> Test</p>
+';
+&printFeed();
+print '
 	</div>
 	<div class="footer">
 		<div class="element">
@@ -59,9 +60,6 @@ print '
 			Members List
 		</div>	
 	</div>
-';
-  &printFeed(); 
-  print '
   <!-- ***************************************************************
        Below this point is text you should include on every IT350 page
        *************************************************************** -->
