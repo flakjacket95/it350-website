@@ -34,7 +34,7 @@ if(!($session->param('admin')))
     }
 }
 else {
-    my $fname = "log_menu.html";
+    my $fname = "admin_menu.html";
     open(my $myfile, $fname);
     while (my $line = <$myfile>) {
         chomp $line;
