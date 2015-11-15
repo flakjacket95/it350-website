@@ -51,7 +51,7 @@ print '
 		  <input type="submit">
 		</form>
 ';
-&printFeed();
+&printFeed($username);
 print '
 	</div>
 	<div class="footer">

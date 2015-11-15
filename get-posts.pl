@@ -1,4 +1,5 @@
-sub printFeed() {
+sub printFeed {
+    my $username = @_[0];
     my $frnd = "friend/".$username.".txt";
     open(my $frndfile,  $frnd);
     while(my $nm = <$frndfile>) {
