@@ -52,7 +52,7 @@ print '
 		</form>
 ';
 &printFeed($username);
-print '
+print 
 	</div>
 	<div class="footer">
 		<div class="element">
