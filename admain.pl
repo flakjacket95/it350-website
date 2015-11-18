@@ -13,6 +13,9 @@ my $sid = $session->id();
 # This was set with the login.pl script.                                                                                                    
 my $username = $session->param('username');
 ###Checks for no-login and returns to the homepage if so                                                                                 
+if(!($session->param('admin'))) {
+	print "Location: main.pl\n\n";
+}
 if(!($username)) {
     print "Location: index.html\n\n";
 }
@@ -33,7 +36,7 @@ if(!($session->param('admin')))
 	print $line;
     }
 }
-if($session->param('admin') {
+else {
     my $fname = "admin_menu.html";
     open(my $myfile, $fname);
     while (my $line = <$myfile>) {
@@ -51,9 +54,6 @@ print '
 		  <input type="submit">
 		</form>
 ';
-   my $admin = $session->param('admin');
-   print "<h1>$admin</h1>";
-
 &printFeed($username);
 print '
 	</div>
