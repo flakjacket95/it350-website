@@ -33,7 +33,7 @@ if(!($session->param('admin')))
 	print $line;
     }
 }
-if($session->param('admin') {
+if($session->param('admin')) {
     my $fname = "admin_menu.html";
     open(my $myfile, $fname);
     while (my $line = <$myfile>) {
