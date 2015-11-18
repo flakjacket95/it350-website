@@ -33,7 +33,7 @@ if(!($session->param('admin')))
 	print $line;
     }
 }
-if($session->param('admin') {
+if($session->param('admin')) {
     my $fname = "admin_menu.html";
     open(my $myfile, $fname);
     while (my $line = <$myfile>) {
@@ -51,8 +51,6 @@ print '
 		  <input type="submit">
 		</form>
 ';
-   my $admin = $session->param('admin');
-   print "<h1>$admin</h1>";
 
 &printFeed($username);
 print '
