@@ -2,8 +2,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 hometown		time	Tue Nov 17 21:29:20 2015	curschool		prevschool		employment	
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -27,8 +30,11 @@ hometown	test	time	Tue Nov 17 21:34:34 2015	curschool	test	prevschool	test	emplo
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 hometown	test	time	Tue Nov 17 21:35:16 2015	curschool	test	prevschool	test	employment	test
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
