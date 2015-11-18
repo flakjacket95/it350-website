@@ -1,1 +1,19 @@
+<<<<<<< Updated upstream
 hometown		time	Tue Nov 17 21:29:20 2015	curschool		prevschool		employment	
+=======
+hometown	test	time	Tue Nov 17 21:28:16 2015	curschool	test	prevschool	test	employment	test
+hometown	test	time	Tue Nov 17 21:28:26 2015	curschool	test	prevschool	test	employment	test
+hometown	test	time	Tue Nov 17 21:29:04 2015	curschool	test	prevschool	test	employment	test
+hometown	test	time	Tue Nov 17 21:29:16 2015	curschool	test	prevschool	test	employment	test
+hometown	test	time	Tue Nov 17 21:30:35 2015	curschool	test	prevschool	test	employment	test
+hometown		time	Tue Nov 17 21:30:38 2015	curschool		prevschool		employment	
+hometown		time	Tue Nov 17 21:31:12 2015	curschool		prevschool		employment	
+hometown		time	Tue Nov 17 21:31:36 2015	curschool		prevschool		employment	
+hometown		time	Tue Nov 17 21:32:25 2015	curschool		prevschool		employment	
+hometown		time	Tue Nov 17 21:34:18 2015	curschool		prevschool		employment	
+hometown		time	Tue Nov 17 21:34:19 2015	curschool		prevschool		employment	
+hometown		time	Tue Nov 17 21:34:21 2015	curschool		prevschool		employment	
+hometown		time	Tue Nov 17 21:34:22 2015	curschool		prevschool		employment	
+hometown	test	time	Tue Nov 17 21:34:34 2015	curschool	test	prevschool	test	employment	test
+>>>>>>> Stashed changes
+hometown	test	time	Tue Nov 17 21:35:16 2015	curschool	test	prevschool	test	employment	test

@@ -1,4 +1,2 @@
-status	My status	time	Thu Nov  5 07:56:46 2015	mood	B	location	home
-status	My status	time	Thu Nov  5 07:56:46 2015	mood	B	location	home
-status	My status	time	Thu Nov  5 07:56:46 2015	mood	B	location	home
-status	My status	time	Thu Nov  5 07:56:46 2015	mood	B	location	home
+status	Test status	time	Wed Nov 18 07:58:36 2015	mood	A	location	MI
+status	THIS IS AN AWESOME STATUS, YAY IT WORKS!	time	Wed Nov 18 07:59:52 2015	mood	B	location	Naptown

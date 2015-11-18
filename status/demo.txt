@@ -1,2 +1,0 @@
-status	Example status	time	Thu Nov  5 08:51:32 2015	mood	B	location	MI300
-status	Ex 2	time	Thu Nov  5 08:52:13 2015	mood	D	location	A
