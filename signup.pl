@@ -30,7 +30,7 @@ my $time = localtime();
 my $cur = param("curschool");
 my $prev = param("prevschool");
 my $employ = param("employment");
-
+print "Test";
 my $fname = "bio/".$user.".txt";
 open(my $file, ">>", $fname);
 print $file "hometown\t$home\ttime\t$time\tcurschool\t$cur\tprevschool\t$prev\temployment\t$employ\n";
