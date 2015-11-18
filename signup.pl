@@ -8,8 +8,6 @@ use MIME::Base64;
 
 my $user = param("username");
 my $pass = param("password"); 
-$user="new_test";
-$pass="pass";
 
 my $fname = "passwords.txt";
 open(my $file, ">>", $fname);
@@ -24,6 +22,20 @@ for($ii = 0; $ii < 25; $ii++)
 
 my $password = md5_base64($pass . $salt);
 print $file "$user\t$password\t$salt\t0\n";
+close($file);
+
+
+my $home = param("hometown");
+my $time = localtime();
+my $cur = param("curschool");
+my $prev = param("prevschool");
+my $employ = param("employment");
+
+my $fname = "bio/".$user.".txt";
+open(my $file, ">>", $fname);
+print $file "hometown\t$home\ttime\t$time\tcurschool\t$cur\tprevschool\t$prev\temployment\t$employ\n";
+close($file);
+
 #my $session = new CGI::Session("driver:File", undef, {Directory=>'/tmp'});
 #my $sid = $session->id();
 
