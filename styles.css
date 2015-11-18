@@ -73,6 +73,11 @@ html, body {
 	text-align: center;
 	vertical-align: middle;
 }
+
+.footer a {
+	href: contact.html;
+}
+
 .container .post {
 	background-color: lightgrey;
 	border-radius: 5px;
