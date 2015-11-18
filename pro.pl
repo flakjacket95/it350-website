@@ -2,7 +2,7 @@ sub printFeed {
     my $username = @_[0];
     my $fname = "bio/".$username.".txt";
     
-    open(my $myfile,  $fname);
+    open(my $myfile,  "|/usr/bin/tac $fname");
     while(my $line = <$myfile>) {
 	chomp $line;
 	print("<div class = \"post\"><p>Profile of $username</p><p>$line</p></div>");
