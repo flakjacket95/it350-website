@@ -13,6 +13,9 @@ my $sid = $session->id();
 # This was set with the login.pl script.                                                                                                    
 my $username = $session->param('username');
 ###Checks for no-login and returns to the homepage if so                                                                                 
+if(!($session->param('admin'))) {
+	print "Location: main.pl\n\n";
+}
 if(!($username)) {
     print "Location: index.html\n\n";
 }
