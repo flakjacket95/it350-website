@@ -29,7 +29,7 @@ my $employ = param("employment");
 
 my $fname = "bio/".$username.".txt";
 open(my $file, ">>", $fname);
-print $file "hometown\t$home\ttime\t$time\tcurschool\t$cur\tprevschool\t$prev\temployment\t$employ\tlocation\t$location\n";
+print $file "hometown\t$home\ttime\t$time\tcurschool\t$cur\tprevschool\t$prev\temployment\t$employ\n";
 close($file);
 
 print p("Bio info update has been recorded!");
