@@ -51,7 +51,7 @@ print '
 		  <input type="submit">
 		</form>
 ';
-   $admin = $session->param('admin');
+   my $admin = $session->param('admin');
    print "<h1>$admin</h1>";
 
 &printFeed($username);
